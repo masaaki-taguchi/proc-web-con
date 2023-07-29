@@ -1,0 +1,18 @@
+# Basic Configuration
+title: 'ras68k-ext controller'
+
+# Process Monitoring Settings
+processName: 'pi68k-ext'
+
+# Command Definitions
+commandsTitle: 'ras68k-ext Start/Stop'
+commands:
+  - name: 'Start'
+    cmd: 'sudo /home/pi/pcmd/pi68k.py start'
+    dir: '/home/pi/pcmd'
+    timeout: 5000
+  - name: 'Stop'
+    cmd: 'sudo /home/pi/pcmd/pi68k.py stop'
+    dir: '/home/pi/pcmd'
+    timeout: 30000
+

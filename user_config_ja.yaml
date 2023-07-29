@@ -1,0 +1,34 @@
+# 基本設定
+title: 'ras68k-ext controller'
+titleStyle: 'dark'
+buttonStyle: 'primary'
+listenPort: 3000
+executingMessage: '実行中...'
+
+# プロセス監視関連設定
+processName: 'pi68k-ext'
+processRunningMessage: 'プロセス状況: 起動中'
+processStoppingMessage: 'プロセス状況: 停止中'
+refreshButtonName: '更新'
+
+# OS 再起動/シャットダウン関連設定
+osRebootShutdownTitle: 'Raspberry Pi 再起動/シャットダウン'
+osRebootShutdownButtonStyle: 'danger'
+rebootCmd: 'sudo reboot'
+rebootButtonName: '再起動'
+rebootConfirmMessage: '再起動しますか？'
+shutdownCmd: 'sudo shutdown -h now'
+shutdownButtonName: 'シャットダウン'
+shutdownConfirmMessage: 'シャットダウンしますか？'
+
+# コマンド定義
+commandsTitle: 'ras68k-ext 起動/停止'
+commands:
+  - name: '起動'
+    cmd: 'sudo /home/pi/pcmd/pi68k.py start'
+    dir: '/home/pi/pcmd'
+    timeout: 5000
+  - name: '停止'
+    cmd: 'sudo /home/pi/pcmd/pi68k.py stop'
+    dir: '/home/pi/pcmd'
+    timeout: 30000
