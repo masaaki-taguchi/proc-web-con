@@ -28,7 +28,7 @@ tar xvf node-v18.17.0-linux-armv7l.tar.xz
 ```
 4. 3.で作成されたディレクトリに合わせて.bashrcでパスを追加
 ```
-echo 'export PATH=$HOME/node-v18.17.0-linux-armv7l/bin:$PATH' > ~/.bashrc
+echo 'export PATH=$HOME/node-v18.17.0-linux-armv7l/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
