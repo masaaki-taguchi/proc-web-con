@@ -137,15 +137,26 @@ node proc-web-con.js -c user_config_ja.yaml
 ```
 
 ## 自動起動設定
-OS起動時にproc-web-conを自動起動するようにします。
+systemdを使用し、OS起動時にproc-web-conを自動起動するようにします。   
+proc-web-con.serviceのデフォルトの状態は以下となっています。   
+```
+[Unit]
+Description=Process controller from web browser
 
-.bashrcを編集します。
+[Service]
+WorkingDirectory=/home/pi/proc-web-con
+ExecStart=nohup /home/pi/node-v18.17.0-linux-armv7l/bin/node proc-web-con.js -c user_config_ja.yaml >/dev/null 2>&1 &
+
+[Install]
+WantedBy=multi-user.target
 ```
-vi ~/.bashrc
+proc-web-con.jsの配置先が「/home/pi/proc-web-con」と異なる場合は、WorkingDirectoryの修正をしてください。   
+また、Node.jsのインストール先が「/home/pi/node-v18.17.0-linux-armv7l/bin」と異なる場合や、使用する設定ファイルを変更したい場合は、ExecStartを修正してください。   
+
+proc-web-con.serviceの内容が問題なければ、以下を実行することで、起動時にproc-web-con.jsが自動起動されます。
 ```
-設定ファイル指定ありで起動し、且つnohup.logにログは出力しない場合は、以下のような指定をして、保存します。
-```
-nohup node /home/pi/proc-web-con/proc-web-con.js -c user_config_ja.yaml >/dev/null 2>&1 &
+sudo cp proc-web-con.service /etc/systemd/system
+sudo systemctl enable proc-web-con.service
 ```
 
 ## ライセンス

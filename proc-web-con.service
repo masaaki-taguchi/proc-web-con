@@ -1,0 +1,10 @@
+[Unit]
+Description=Process controller from web browser
+
+[Service]
+WorkingDirectory=/home/pi/proc-web-con
+ExecStart=nohup /home/pi/node-v18.17.0-linux-armv7l/bin/node proc-web-con.js -c user_config_ja.yaml >/dev/null 2>&1 &
+
+[Install]
+WantedBy=multi-user.target
+
