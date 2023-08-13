@@ -45,6 +45,8 @@ source ~/.bashrc
 * user_config.yaml
 * user_config_ja.yaml
 * user_config_simple.yaml
+* rasp_stat.sh
+* rasp_stat_ja.sh
 * package.json
 * package-lock.json
 
