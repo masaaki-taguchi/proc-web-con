@@ -35,7 +35,7 @@ fi
 if [ $((${throttled} & 0x80000)) -ne 0 ]; then
   prev_throttle+="温度制限/" 
 fi
-if [ -z prev_throttle ]; then
+if [ -z "$prev_throttle" ]; then
   prev_throttle="-" 
 fi
 prev_throttle=$(echo $prev_throttle | sed 's/\/*$//')
