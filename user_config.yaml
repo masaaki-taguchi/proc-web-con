@@ -10,6 +10,7 @@ processName: 'pi68k-ext'
 processActiveMessage: 'Process Status: Running'
 processInactiveMessage: 'Process Status: Stopping'
 refreshButtonName: 'Refresh'
+monitoringCmd: 'sudo /home/pi/proc-web-con/rasp_stat.sh'
 
 # OS Reboot/Shutdown Settings
 osRebootShutdownTitle: 'Raspberry Pi Reboot/Shutdown'

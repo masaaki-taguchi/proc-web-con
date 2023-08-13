@@ -77,7 +77,8 @@ executingMessage: '実行中...'
 使用可能なスタイルは以下となります。   
 [<img src="./images/style.png" width="200">](./images/style.png)
 
-プロセス監視関連設定のprocessNameは稼働状況を監視したいプロセス名を指定します。grepコマンドに指定するものであるため、厳密にプロセス名と完全一致しなくても問題ありません。例では"pi68k-ext"とありますが、実際には"pi68k-ext_r2"または"pi68k-ext_r3"のプロセスの稼働を確認します。
+プロセス監視関連設定のprocessNameは稼働状況を監視したいプロセス名を指定します。grepコマンドに指定するものであるため、厳密にプロセス名と完全一致しなくても問題ありません。例では"pi68k-ext"とありますが、実際には"pi68k-ext_r2"または"pi68k-ext_r3"のプロセスの稼働を確認します。   
+monitoringCmdの指定があった場合は、任意のコマンドの実行結果をプロセスの稼働確認と同時に表示することが出来ます。
 
 ```
 # プロセス監視関連設定
@@ -85,6 +86,7 @@ processName: 'pi68k-ext'
 processRunningMessage: 'プロセス状況: 起動中'
 processStoppingMessage: 'プロセス状況: 停止中'
 refreshButtonName: '更新'
+monitoringCmd: 'sudo /home/pi/proc-web-con/rasp_stat_ja.sh'
 ```
 
 OS 再起動/シャットダウン関連設定のosRebootShutdownButtonStyleは再起動、シャットダウンボタンのスタイルの指定です。   

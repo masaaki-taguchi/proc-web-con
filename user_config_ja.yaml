@@ -10,6 +10,7 @@ processName: 'pi68k-ext'
 processRunningMessage: 'プロセス状況: 起動中'
 processStoppingMessage: 'プロセス状況: 停止中'
 refreshButtonName: '更新'
+monitoringCmd: 'sudo /home/pi/proc-web-con/rasp_stat_ja.sh'
 
 # OS 再起動/シャットダウン関連設定
 osRebootShutdownTitle: 'Raspberry Pi 再起動/シャットダウン'

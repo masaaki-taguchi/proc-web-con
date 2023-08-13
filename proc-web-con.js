@@ -140,6 +140,7 @@ itemMap.set('rebootConfirmMessage', rebootConfirmMessage);
 itemMap.set('shutdownButtonName', shutdownButtonName);
 itemMap.set('shutdownConfirmMessage', shutdownConfirmMessage);
 itemMap.set('commandsTitle', userConfig.commandsTitle);
+itemMap.set('monitoringResult', '');
 let commandButtonList = [];
 for (let command of global.commandList) {
   commandButtonList.push(command.name); 
@@ -230,6 +231,24 @@ function checkProcess(itemMap, processStatusMessageList) {
     itemMap.set('processStatusMessage', processStatusMessageList[0]);
   } catch (error) {
     itemMap.set('processStatusMessage', processStatusMessageList[1]);
+  }
+
+  checkOSStat(itemMap);
+}
+
+function checkOSStat(itemMap) {
+  try {
+    let monitoringCmd = userConfig.monitoringCmd;
+    if (monitoringCmd) {
+      let result = execSync(monitoringCmd).toString(); 
+      logging(result.toString());
+      result = result.replace(/\n/g, '<br/>'); 
+      logging(result);
+      itemMap.set('monitoringResult', result);
+    }
+  } catch (error) {
+    logging(error);
+    itemMap.set('monitoringResult', '');
   }
 }
 
